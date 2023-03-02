@@ -17,6 +17,9 @@ function nextFibo (nb) {
 	}
 	return next;
 }
+/*CONTROL*/
+if (arg < 0 || isNaN(arg))
+	return console.log(-1);
 
 /*AFFECT*/
 
