@@ -1,16 +1,41 @@
-let arg1 = process.argv[2];
+// Variables //
 
-function oneOfTwoCapital(arg){
-	let newStr;
+let arg = process.argv[2];
+let newStr = [];
+let flag = 0;
+let result;
+// Functions :
+
+function capitalOneOfTwo(arg){
 	for (i = 0; i < arg.length; i++){
-		if (i % 2 === 0 && arg[i] >= 'a' && arg[i] <= 'z'){
-			console.log('yes')
-			arg[i] = arg[i].toUpperCase;
+		if (arg[i] == ' '){
+			newStr += ' ';
+			flag = 1;
 		}
-		newStr += arg[i]
-		console.log(arg[i]);
+		else if (flag == 0){
+			newStr += arg[i].toUpperCase();
+			flag = 1;
+		}
+		else if (i < arg.length){
+			newStr += arg[i].toLowerCase();
+			flag = 0;
+		}
 	}
- return newStr;
+	return newStr;
 }
 
-console.log(oneOfTwoCapital(arg1));
+//Error :
+
+if (arg[0] < 'A' || arg[0] > 'z'){
+	return console.log('erreur')
+}
+
+// Parsing :
+
+// Resolve :
+
+capitalOneOfTwo(arg);
+result = newStr;
+// Display :
+
+console.log(result);

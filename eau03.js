@@ -3,7 +3,7 @@ const arg = process.argv[2];
 const erreur = -1;
 let result;
 /*Fonction*/
-function calcFibonnaci (nb) 
+function calcFibonnaci (nb)
 {
 	if (isNaN(nb))
 		return (erreur);

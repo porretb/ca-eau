@@ -1,20 +1,28 @@
-let arg = process.argv;
-function reverseArg (arr)
-{
-	if (arr.length === 2)
-	{
-		return ('error');
-	}
-	else
-	{
-		let newArray = [];
-		arrLength = arr.length
-		for (arrLength; arrLength !== 0; arrLength--)
-		{
-			newArray.push(arr[arrLength]);
-		}
-		return newArray.slice(1, -1);
-	}
+// Variables //
 
+let arg = process.argv.slice(2);
+let result = [];
+let newArray = [];
+
+// Function //
+
+function argReverse(arr){
+	for (i = arr.length -1; i >= 0; i--){
+		newArray.push(arr[i]);
+	}
+	return newArray;
 }
-console.log(reverseArg(arg));
+// Error //
+
+if (arg.length < 1){
+	return console.log('erreur pas d\'argument');
+}
+// Parsing //
+
+// Resolve //
+argReverse(arg);
+result = newArray.join('\n');
+
+// Display //
+
+console.log(result);

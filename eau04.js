@@ -1,4 +1,6 @@
 let arg = process.argv[2];
+let result;
+let next;
 
 /*FUNCTION*/
 
@@ -10,7 +12,9 @@ function fiboSuite (nb) {
 	else
 		return fiboSuite(nb - 1) + fiboSuite(nb - 2);
 }
+
 function nextFibo (nb) {
+	let next;
 	for (i = 0; nb >= fiboSuite(i); i++)
 	{
 		next = i;
@@ -18,15 +22,15 @@ function nextFibo (nb) {
 	return next;
 }
 /*CONTROL*/
+
 if (arg < 0 || isNaN(arg))
 	return console.log(-1);
 
 /*AFFECT*/
 
-let result;
-
-result = nextFibo(arg);
+next = nextFibo(arg);
+result = fiboSuite(next + 1);
 
 /*AFFICHE*/
 
-console.log(fiboSuite(result + 1));
+console.log('prochain nombre premier :' + result);

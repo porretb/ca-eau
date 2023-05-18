@@ -1,9 +1,15 @@
-let nb1;
-let nb2;
-let arr;
-let display = ' ';
-let zero = '0';
-const nbArr = [];
+// Variable //
+
+let nbArr = [];
+let result;
+// Function //
+
+function combine2(){
+	let nb1;
+	let nb2;
+	let arr;
+	let display = ' ';
+	let zero = '0';
 
 	for (nb1 = 0; nb1 < 100; nb1++)
 	{
@@ -24,4 +30,18 @@ const nbArr = [];
 			nbArr.push(arr);
 		}
 	}
-console.log(nbArr.join(', '));
+}
+
+// Gestion d'erreur //
+
+// Parsing //
+
+// Resovle //
+
+combine2();
+result = nbArr.join(', ');
+
+// Display //
+
+//console.log(nbArr.join(', '));
+console.log(result);
